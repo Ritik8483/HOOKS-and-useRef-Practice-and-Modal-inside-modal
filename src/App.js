@@ -1,24 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import UseReducers from './components/UseReducers';
+import UseCallbackHook from './components/UseCallbackHook';
+import UseMemoComponent from './components/UseMemo';
+import UserRefFirst from './components/useRef/UserRefFirst';
+import UseRefSecond from './components/useRef/UseRefSecond';
+import ModalContainer from './components/modal/ModalContainer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    // <UseReducers/>
+    // <UseCallbackHook/>
+    // <UseMemoComponent/>
+    // <UserRefFirst/>
+    // <UseRefSecond/>
+    <ModalContainer/>
   );
 }
 
