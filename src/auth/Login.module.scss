@@ -1,0 +1,17 @@
+.loginContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.formGroup{
+    width: 100%;
+}
+.loginCard{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

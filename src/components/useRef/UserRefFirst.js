@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import { Button } from "react-bootstrap";
 import { useDebounce } from "use-debounce";
 import styles from "../useRef/UseRefFirst.module.scss";
 
@@ -14,9 +15,12 @@ const UserRefFirst = () => {
   const [mentionUsers] = useDebounce(mentionData, 1000);
 
     // useEffect(() => {
-    //   focusRef.current.focus();
-    //   console.log("getAllInnerTextRef", getAllInnerTextRef?.current?.innerHTML);
+    //   // focusRef.current.focus();
     // }, []);
+
+    const handleOuterRef=()=>{
+      console.log("getAllInnerTextRef", getAllInnerTextRef?.current?.innerHTML);
+    }
 
   const userArray = [
     {
@@ -43,19 +47,24 @@ const UserRefFirst = () => {
 
   const textAreaBoxChange = (e) => {
     setTextAreaValue(e.target.value);
+    console.log(e.target.value);
     let a = e.target.value.split("");
     let hash = e.target.value.split(" ");
+    console.log("hash",hash);
+    console.log("hashLength",hash[hash?.length-1]);
     if (hash[hash.length - 1][0] === "@") {
       handleMentionsOpen(a.pop(), hash?.pop()?.split("@")[1]);
     } else {
       setShowMentions(false);
     }
     // console.log('hash__1',hash?.pop());
-    // console.log('hash__2',hash[hash.length - 1][0]);
+    // console.log('hash__2',hash[hash.length - 1]);
+    // console.log('hash__3',hash[hash.length - 1][0]);
   };
 
   const handleMentionsOpen = (event, mentionUserData) => {
     console.log('event',event);
+    console.log('mentionUserData',mentionUserData);
     if (event === "@") {
       setShowMentions(true);
       setShowMentionData(mentionUserData);
@@ -92,6 +101,7 @@ const UserRefFirst = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          flexDirection:'column',
           minHeight: "100vh",
         }}
       >
@@ -118,6 +128,7 @@ const UserRefFirst = () => {
             </div>
           ) : null}
         </div>
+        <Button onClick={handleOuterRef} >Onclick</Button>
       </div>
     </div>
   );
